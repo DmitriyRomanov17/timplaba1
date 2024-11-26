@@ -1,5 +1,5 @@
 #include "headers/GronsfeldCipher.hpp"
-
+#include <locale>
 #include <iostream>
 
 bool is_valid(const std::wstring& string) {
@@ -12,8 +12,8 @@ bool is_valid(const std::wstring& string) {
 }
 
 int main() {
-    setlocale(LC_ALL, "Russian_Russia.866");
-
+    std::locale loc("ru_RU.UTF-8");
+    std::locale::global(loc);
     std::wstring key = L"";
     std::wcout << L"Input the key: ";
     std::wcin >> key;
